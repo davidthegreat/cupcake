@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<% include partials/head.ejs%>
+  </head>
+  <body>
+  	<% include partials/header.ejs%>
+
+<% if (cupcakes) {%>
+
+<div class="row more-padding">
+	<div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+		<h2>Your Cart</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Cupcakes</th>
+					<th>Price</th>
+					<th>Quantity</th>
+				</tr>
+			</thead>
+			<% for (var i = 0; i < cupcakes.length;  i++) { %>
+			<tbody>
+				<tr>
+					<td><span><%= cupcakes[i].item.Name %></span></td>
+					<td>$<%= cupcakes[i].price %></td>
+					<td><span><a href="/reduce/<%= cupcakes[i].item._id %>"><i class="fa fa-minus" aria-hidden="true"></i></a></span>&nbsp <%= cupcakes[i].qty %> &nbsp<span><a href="/add/<%= cupcakes[i].item._id %>"><i class="fa fa-plus" aria-hidden="true"></i></a></span></td>
+					<td><a href="/remove/<%= cupcakes[i].item._id %>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+				</tr>
+			</tbody>
+				<% } %>
+		</table>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-6 col-md-6 col-sm-offset-3">
+		<strong>Total: $<%= totalPrice %></strong>
+	</div>
+</div>
+<hr width="50%">
+<div class="row">
+	<div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+		<a href="/checkout" type="button" class="btn btn-success float-right">Checkout</a>
+	</div>
+</div>
+
+<% } else { %>
+	<div class="row">
+		<div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+			<h2>You have no Cupcakes in cart</h2>
+		</div>
+	</div>
+
+<% }%>
+		
+    <% include partials/scripts.ejs%>
+  </body>
+</html>

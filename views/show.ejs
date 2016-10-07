@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<% include partials/head.ejs%>
+  </head>
+  <body>
+  	<% include partials/header.ejs%>
+
+  <div class="row show-padding">
+  <% for(var i=0; i < cupcake.length; i++){ %>
+    <div class="center-div">
+      <div class="col-md-4 col-md-offset-2">
+        <a href="#" class="thumbnail">
+          <img src="<%= cupcake[i].imageURL%>" alt="..." class="img-responsive show-img">
+        </a>
+      </div>
+      <div class="col-md-6 div-fonts">
+        <h1><%= cupcake[i].Name %></h1><br>
+        <h2>$<%= cupcake[i].price %></h2><br>
+        <h4>Cupcake info: </h4>
+        <p><%= cupcake[i].description%></p><br>
+        <hr align="left" width="50%">
+        <a href="/add-cart/<%= cupcake[i]._id%>" role="button" class="btn btn-success btn-lg">Add To Cart</a>
+      </div>
+     
+    </div>
+    <% } %>
+  </div>
+
+		
+    <% include partials/scripts.ejs%>
+  </body>
+</html>

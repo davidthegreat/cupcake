@@ -1,0 +1,21 @@
+<nav class="navbar navbar-fixed-top">
+
+  <div class="content-padding">
+
+  <div class="navbar-header">
+      <a class="navbar-brand color-logo" href="/">Home</a>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right ">
+
+      <li><a href="/shopping-cart"><!-- <span class="badge">
+        </span> --><i class="fa fa-shopping-cart fa-2x color-white padding"></i></a></li>
+      <% if (login) {%>
+        <li ><a href="/users/logout" class="color-nav">logg out</a></li>
+      <% } else {%>
+        <li ><a href="/users/signin" class="color-nav">Login</a></li>
+        <li ><a href="/users/signup" class="color-nav">Sign Up</a></li>
+      <% }%>
+    </ul>
+  </div>
+</nav>

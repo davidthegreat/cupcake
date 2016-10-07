@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+	<% include partials/head.ejs%>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  	<% include partials/header.ejs%>
+
+
+
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://kimberlysnyder.com/wp-content/uploads/2013/05/IMG_6155cs.jpg');">
+                	<div class="row">
+                		<div class="col-md-12">
+                			<div class="text">
+                				<h1 class="fonts">muffinlicious</h1>
+                				<p>Best Cupcakes in town or your money Back.</p>
+                			</div>
+                		</div>
+                	</div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+          <div class="row padding">
+            <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+              <div id="success" class="alert alert-success" <% if (noMessage) {%> hidden <% } %>>
+                <%= successMsg %>
+              </div>
+            </div>
+          </div>
+          
+          <div class="center-padding">
+            <H1>BEST SELLERS</H1>
+          </div>
+
+          <div class="row">
+          <% for(var i=0; i < cupcakes.length; i++){ %>
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail pinky-img">
+                <img src="<%= cupcakes[i].imageURL %>" alt="..." class="img-responsive">
+                <div class="caption">
+                <h3 class="title-font"><%= cupcakes[i].Name %></h3>
+                <p class="price-font">$<%= cupcakes[i].price %></p>
+                <p><a href="/cupcake/<%= cupcakes[i]._id %>" class="btn btn-default btn-lg btn-color" role="button">View Details</a></p>
+              </div>
+            </div>
+          </div>
+        <% } %>
+        </div>
+      </div>
+
+		
+    <% include partials/scripts.ejs%>
   </body>
 </html>
