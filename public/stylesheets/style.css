@@ -1,8 +1,152 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #333;
 }
 
-a {
-  color: #00B7FF;
+.content-padding {
+  padding-left: 11%;
+  padding-right: 11%;
+}
+
+
+
+
+html,
+body {
+    height: 100%;
+}
+
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.text{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -300px;
+  color: white;
+  	font-family: fantasy;
+	text-align: center;
+}
+
+.text h1{
+	font-size: 120px;
+}
+
+.text p{
+	font-size: 30px;
+}
+
+.color-logo{
+	color: black;
+	font-size: 20px;
+}
+
+.padding{
+	padding-top: 10px;
+}
+
+.more-padding{
+  padding-top: 50px;
+}
+
+.color-nav{
+	color: black;
+	font-size: 16px;	
+}
+
+.color-white{
+	color: black;
+}
+
+.pinky-img img{
+  max-height: 200px;
+}
+
+.pinky-img{
+  border-style: none;
+}
+
+.center-padding{
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.caption{
+  text-align: center;
+}
+
+.title-font{
+  font-family: fantasy;
+  font-size: 28px;
+}
+
+.price-font{
+  font-family: fantasy;
+  font-size: 40px;
+}
+
+.btn-color{
+  background-color: #ffff66;
+  border-style: none;
+  font-family: fantasy;
+}
+
+.btn-color:hover{
+  background-color: #ffff00;
+}
+
+div.show-img{ 
+  max-height: 210px;
+  max-width: 180px;
+}
+
+.show-padding{
+  margin-top: 140px;
+}
+
+.div-fonts h1{
+  font-family: fantasy;
+  font-size: 48px;
+}
+
+.div-fonts h2{
+  font-family: fantasy;
+  font-size: 38px;
+}
+
+.div-fonts h4{
+  font-family: fantasy;
+  font-size: 28px;
+}
+
+.div-fonts p{
+  font-family: fantasy;
+  font-size: 18px;
+}
+
+.badge{
+  background-color: black;
 }
