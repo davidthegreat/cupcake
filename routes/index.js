@@ -111,7 +111,7 @@ router.post('/checkout',isLoggedIn, function(req, res, next){
 	}
 	var cart = new Cart(req.session.cart);
 	var stripe = require("stripe")(
-  		SECRET_KEY
+  		"sk_test_xaO6ICGgZkSwtU8aMLVve1OS"
 	);
 
 	stripe.charges.create({
